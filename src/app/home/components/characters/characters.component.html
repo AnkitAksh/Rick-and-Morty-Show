@@ -1,0 +1,37 @@
+<h3>
+    {{filterOrderFromParent}}
+</h3>
+<button (click)="filterById('asc')">Asc</button>
+<button (click)="filterById('desc')">Desc</button>
+<div class="row">
+    <div class="card col-md-3" *ngFor="let character of characters">
+        <img class="card-img-top" [src]="character.image" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{character.name}}</h5>
+            <span>id: {{character.id}}</span>
+            <span>- created {{character.created | year}} years ago</span>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <span class="float-left">STATUS</span>
+                <span class="float-right">{{character.status}}</span>
+            </li>
+            <li class="list-group-item">
+                <span class="float-left">SPECIES</span>
+                <span class="float-right">{{character.species}}</span>
+            </li>
+            <li class="list-group-item">
+                <span class="float-left">GENDER</span>
+                <span class="float-right">{{character.gender}}</span>
+            </li>
+            <li class="list-group-item">
+                <span class="float-left">ORIGIN</span>
+                <span class="float-right">{{character.origin['name']}}</span>
+            </li>
+            <li class="list-group-item">
+                <span class="float-left">LAST LOCATION</span>
+                <span class="float-right">{{character.location['name']}}</span>
+            </li>
+        </ul>
+    </div>
+</div>

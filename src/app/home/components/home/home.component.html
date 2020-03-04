@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-2">
+        <app-filters></app-filters>
+    </div>
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-12">
+                <app-selected-filters></app-selected-filters>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 float-left">
+                <app-search></app-search>
+            </div>
+            <div class="col-md-6 float-right">
+                <app-sort (filterOrderEmitter)="receiveFilterOrder($event)">
+                </app-sort>
+            </div>
+        </div>
+        <div class="row">
+            <app-characters [filterOrderFromParent]="filterOrderById"></app-characters>
+        </div>
+    </div>
+</div>
