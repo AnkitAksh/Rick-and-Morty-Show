@@ -14,7 +14,7 @@ export class SelectedFiltersComponent implements OnInit {
 
   ngOnInit() {
     this.filterList = [];
-    this.filter.currentFilter.subscribe(message => {
+    this.filter.currentCategory.subscribe(message => {
       if (message) {
         if (message.status) {
           this.filterList.push(message.filterName);
@@ -29,8 +29,7 @@ export class SelectedFiltersComponent implements OnInit {
   close(val) {
     const index = this.filterList.indexOf(val);
     this.filterList.splice(index, 1);
-    // behaviour subj
-    this.filter.changeFilter1({ filterCategory: 'species', filterName: val, status: false });
+    this.filter.changeFilter({ filterCategory: 'species', filterName: val, status: false });
   }
 
 }

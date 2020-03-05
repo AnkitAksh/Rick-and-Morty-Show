@@ -1,7 +1,4 @@
 <h3>Selected Filters</h3>
-<div>
-    <label class="filter-style" *ngFor="let item of filterList">{{item}}<span (click)="close(item)"><i
-                class="fa fa-times"></i></span></label>
-
-</div>
-<!-- <label class="filter-style" *ngFor="let item of filterList">{{item}}<span (click)="close(item)"><i class="fa fa-times"></i></span></label> -->
+<button class="btn filter-style" *ngFor="let item of filterList">
+    {{item}}<i class="fa fa-close" (click)="close(item)"></i>
+</button>

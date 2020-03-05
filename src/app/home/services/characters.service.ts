@@ -12,21 +12,21 @@ import { FilterModel } from '../models/filter-model';
 export class CharactersService {
 
   // for filters
+  private categorySource = new BehaviorSubject(null);
+  currentCategory = this.categorySource.asObservable();
+
+  // for filters
   private filterSource = new BehaviorSubject(null);
   currentFilter = this.filterSource.asObservable();
 
-  // for filters
-  private filterSource1 = new BehaviorSubject(null);
-  currentFilter1 = this.filterSource1.asObservable();
-
   constructor(private http: HttpClient) { }
+
+  changeCategory(message) {
+    this.categorySource.next(message);
+  }
 
   changeFilter(message) {
     this.filterSource.next(message);
-  }
-
-  changeFilter1(message) {
-    this.filterSource1.next(message);
   }
 
   handleError(error: HttpErrorResponse) {

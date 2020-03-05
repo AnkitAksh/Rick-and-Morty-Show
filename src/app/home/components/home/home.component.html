@@ -14,8 +14,7 @@
                     <app-search (searchTextEmitter)="searchByName($event)"></app-search>
                 </div>
                 <div class="col-md-6 float-right">
-                    <app-sort (filterOrderEmitter)="filterById($event)">
-                    </app-sort>
+                    <app-sort (filterOrderEmitter)="filterById($event)"></app-sort>
                 </div>
             </div>
             <app-characters [filterOrderFromParent]="sortByIdFilter" [searchTextFromParent]="searchText">

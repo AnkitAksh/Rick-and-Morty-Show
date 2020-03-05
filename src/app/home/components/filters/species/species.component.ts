@@ -18,7 +18,7 @@ export class SpeciesComponent implements OnInit {
   ngOnInit() {
     this.human = false;
     this.alien = false;
-    this.filter.currentFilter1.subscribe((item: FilterModel) => {
+    this.filter.currentFilter.subscribe((item: FilterModel) => {
       if (item) {
         if (item.filterName === 'Alien') {
           this.alien = item.status;
@@ -30,6 +30,6 @@ export class SpeciesComponent implements OnInit {
   }
 
   onSpeciesChange(event, val) {
-    this.filter.changeFilter({ filterCategory: 'species', filterName: val, status: event.target.checked });
+    this.filter.changeCategory({ filterCategory: 'species', filterName: val, status: event.target.checked });
   }
 }

@@ -28,7 +28,7 @@ export class CharactersComponent implements OnChanges, OnInit, OnDestroy {
   ngOnInit() {
     this.filters = [];
     this.initCharacters();
-    this.characterService.currentFilter.subscribe(val => {
+    this.characterService.currentCategory.subscribe(val => {
       if (val) {
         if (val.status) {
           this.filters.push(val);
@@ -40,7 +40,7 @@ export class CharactersComponent implements OnChanges, OnInit, OnDestroy {
       // filter function call
       this.characters = this.characterService.filterCharacters(this.initialCharacters, this.filters);
     });
-    this.characterService.currentFilter1.subscribe(val => {
+    this.characterService.currentFilter.subscribe(val => {
       if (val) {
         if (val.status) {
           this.filters.push(val);

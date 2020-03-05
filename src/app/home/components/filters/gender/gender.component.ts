@@ -15,7 +15,7 @@ export class GenderComponent implements OnInit {
   constructor(private filter: CharactersService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.filter.currentFilter1.subscribe((item: FilterModel) => {
+    this.filter.currentFilter.subscribe((item: FilterModel) => {
       if (item) {
         if (item.filterName === 'Male') {
           this.male = item.status;
@@ -27,7 +27,7 @@ export class GenderComponent implements OnInit {
   }
 
   onGenderChange(event, val) {
-    this.filter.changeFilter({ filterCategory: 'gender', filterName: val, status: event.target.checked });
+    this.filter.changeCategory({ filterCategory: 'gender', filterName: val, status: event.target.checked });
   }
 
 }
