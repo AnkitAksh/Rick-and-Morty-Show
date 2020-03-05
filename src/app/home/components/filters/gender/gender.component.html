@@ -1,13 +1,14 @@
-<div class="border border-dark">
+
+<div class="border border-dark filter-main">
     <h4>Gender</h4>
-    <form>
+    <form >
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Male</label>
+            <input type="checkbox" class="form-check-input" id="male" name="male" [(ngModel)]="male" (change)="onGenderChange($event, 'Male')">
+            <label class="form-check-label" for="male">Male</label>
         </div>
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Female</label>
+            <input type="checkbox" class="form-check-input" id="female" name="female" [(ngModel)]="female" (change)="onGenderChange($event, 'Female')">
+            <label class="form-check-label" for="male">Female</label>
         </div>
     </form>
 </div>

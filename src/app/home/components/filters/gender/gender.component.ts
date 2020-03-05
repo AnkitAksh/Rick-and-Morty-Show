@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { CharactersService } from 'src/app/home/services/characters.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { FilterModel } from 'src/app/home/models/filter-model';
 
 @Component({
   selector: 'app-gender',
@@ -6,10 +9,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gender.component.css']
 })
 export class GenderComponent implements OnInit {
-
-  constructor() { }
+  // genderForm: FormGroup;
+  male: boolean;
+  female: boolean;
+  constructor(private filter: CharactersService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.filter.currentFilter1.subscribe((item: FilterModel) => {
+      if (item) {
+        if (item.filterName === 'Male') {
+          this.male = item.status;
+        } else if (item.filterName === 'Female') {
+          this.female = item.status;
+        }
+      }
+    });
+  }
+
+  onGenderChange(event, val) {
+    this.filter.changeFilter({ filterCategory: 'gender', filterName: val, status: event.target.checked });
   }
 
 }

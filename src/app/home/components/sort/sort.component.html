@@ -1,10 +1,16 @@
-<div class="btn-group">
-    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false">
-        Shoert by ID
-    </button>
-    <div class="dropdown-menu">
-        <button class="dropdown-item" type="button" (click)="shortById('asc')">Ascending</button>
-        <button class="dropdown-item" type="button" (click)="shortById('desc')">Descending</button>
-    </div>
+<div class="clearfix">
+    <select class='select-option float-right' (change)="shortById($event.target.value)">
+        <option value="0">Short by ID</option>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+    </select>
 </div>
+<!-- <div class="d-flex justify-content-end mb-3">
+    <div class="p-2 bg-primary">
+        <select class='select-option' (change)="shortById($event.target.value)">
+            <option value="0">Short by ID</option>
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+        </select>
+    </div>
+</div> -->

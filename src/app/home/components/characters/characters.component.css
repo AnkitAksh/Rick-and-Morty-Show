@@ -1,0 +1,42 @@
+/* ul, li , span {
+    font-size: 12px;
+} */
+
+.card-main {
+    background: #000000;
+}
+
+.card-content {
+    font-size: 10px;
+    color:#F7A210;
+    font-weight: 600;
+}
+
+.card-content-key {
+    font-size: 10px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.card-sub-text {
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.card-cotent-header {
+    opacity: 0.6;
+    margin-top: -80px;
+    background: black;
+}
+
+.card-name {
+    color: #ffffff;
+    line-height: 1.4;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.ok {
+    height: 50px;
+    background: #404747;
+}

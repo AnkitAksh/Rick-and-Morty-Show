@@ -7,15 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  filterOrderById = 'asc';
+  sortByIdFilter: string;
+  searchText: string;
   constructor() { }
 
   ngOnInit() {
   }
 
-  receiveFilterOrder($event: string) {
-    this.filterOrderById = $event;
-    console.log('parent', this.filterOrderById);
+  // TODO: NEED TO RENAME THE FUNCTION NAME
+  filterById($event: string) {
+    this.sortByIdFilter = $event;
   }
+
+  searchByName($event: string) {
+    this.searchText = $event;
+  }
+
+  //
 
 }

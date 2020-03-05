@@ -17,14 +17,10 @@ export class SortComponent implements OnInit {
   shortById(order) {
     switch (order) {
       case 'asc':
-        console.log('asc');
         this.filterOrderEmitter.emit('asc');
-        // this.products.sort((a, b) => b.id - a.id);
         break;
       case 'desc':
-        console.log('desc');
         this.filterOrderEmitter.emit('desc');
-        // this.products.sort((a, b) => a.id - b.id);
         break;
     }
   }

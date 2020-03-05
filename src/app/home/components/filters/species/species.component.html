@@ -1,17 +1,15 @@
-<div class="border border-dark">
+<div class="border border-dark filter-main">
     <h4>Species</h4>
     <form>
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Human</label>
+            <input type="checkbox" class="form-check-input" id="human" name="human" [(ngModel)]="human"
+                (change)="onSpeciesChange($event, 'Human')">
+            <label class="form-check-label" for="human">Human</label>
         </div>
         <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Mythlog</label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Other Species..</label>
+            <input type="checkbox" class="form-check-input" id="alien" name="alien" [(ngModel)]="alien"
+                (change)="onSpeciesChange($event, 'Alien')">
+            <label class="form-check-label" for="alien">Alien</label>
         </div>
     </form>
 </div>

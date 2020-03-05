@@ -1,37 +1,37 @@
-<h3>
-    {{filterOrderFromParent}}
-</h3>
-<button (click)="filterById('asc')">Asc</button>
-<button (click)="filterById('desc')">Desc</button>
-<div class="row">
-    <div class="card col-md-3" *ngFor="let character of characters">
-        <img class="card-img-top" [src]="character.image" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{character.name}}</h5>
-            <span>id: {{character.id}}</span>
-            <span>- created {{character.created | year}} years ago</span>
+<div class="margin-15">
+    <div class="row">
+        <div class="card col-md-3 col-sm-3 card-main"
+            *ngFor="let character of characters | search: searchTextFromParent : 'name'">
+            <img class="card-img-top" [src]="character.image" alt="Card image cap">
+            <div class="card-body card-cotent-header">
+                <span class="card-title card-name">{{character.name}}</span>
+                <div>
+                    <span class="card-sub-text">id: {{character.id}}</span>
+                    <span class="card-sub-text">- created {{character.created | year}} years ago</span>
+                </div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item ok">
+                    <span class="card-content-key float-left">STATUS</span>
+                    <span class="card-content float-right">{{character.status}}</span>
+                </li>
+                <li class="list-group-item ok">
+                    <span class="card-content-key float-left">SPECIES</span>
+                    <span class="card-content float-right">{{character.species}}</span>
+                </li>
+                <li class="list-group-item ok">
+                    <span class="card-content-key float-left">GENDER</span>
+                    <span class="card-content float-right">{{character.gender}}</span>
+                </li>
+                <li class="list-group-item ok">
+                    <span class="card-content-key float-left">ORIGIN</span>
+                    <span class="card-content float-right">{{character.origin['name']}}</span>
+                </li>
+                <li class="list-group-item ok">
+                    <span class="card-content-key float-left">LAST LOCATION</span>
+                    <span class="card-content float-right">{{character.location['name']}}</span>
+                </li>
+            </ul>
         </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                <span class="float-left">STATUS</span>
-                <span class="float-right">{{character.status}}</span>
-            </li>
-            <li class="list-group-item">
-                <span class="float-left">SPECIES</span>
-                <span class="float-right">{{character.species}}</span>
-            </li>
-            <li class="list-group-item">
-                <span class="float-left">GENDER</span>
-                <span class="float-right">{{character.gender}}</span>
-            </li>
-            <li class="list-group-item">
-                <span class="float-left">ORIGIN</span>
-                <span class="float-right">{{character.origin['name']}}</span>
-            </li>
-            <li class="list-group-item">
-                <span class="float-left">LAST LOCATION</span>
-                <span class="float-right">{{character.location['name']}}</span>
-            </li>
-        </ul>
     </div>
 </div>

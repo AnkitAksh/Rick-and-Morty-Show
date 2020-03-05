@@ -1,3 +1,7 @@
 <h3>Selected Filters</h3>
-<label>Human</label>
-<label>Nuptia</label>
+<div>
+    <label class="filter-style" *ngFor="let item of filterList">{{item}}<span (click)="close(item)"><i
+                class="fa fa-times"></i></span></label>
+
+</div>
+<!-- <label class="filter-style" *ngFor="let item of filterList">{{item}}<span (click)="close(item)"><i class="fa fa-times"></i></span></label> -->
